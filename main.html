@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Title</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
+    }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    .placeholder {
+      background: #e6e6e6;
+      border: 2px dashed #b5b5b5;
+      color: #666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+    }
+
+    /* Header */
+    header { border-bottom: 1px solid #ddd; padding: 16px 0; }
+    header .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .logo { width: 120px; height: 40px; }
+    .header-title { text-align: right; line-height: 1.3; }
+    .header-title strong { display: block; font-size: 1.25rem; }
+    .header-title span { display: block; font-size: 0.8rem; color: #666; }
+
+    /* Sections */
+    section { padding: 60px 0; }
+    section + section { border-top: 1px solid #eee; }
+
+    .intro-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
+    .intro-layout-reverse { grid-template-columns: 1fr 2fr; }
+    .intro-layout .placeholder { min-height: 320px; }
+
+    h2 { margin-bottom: 24px; }
+
+    .table-wrap { overflow-x: auto; margin-bottom: 32px; }
+    .small-table-wrap { max-width: 360px; }
+    .stat-table { width: 100%; border-collapse: collapse; }
+    .stat-table th, .stat-table td { border: 1px solid #b5b5b5; padding: 10px; min-width: 60px; height: 40px; background: #f2f2f2; }
+    .stat-table th { background: #e0e0e0; }
+    .stat-picture { height: 280px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .grid .placeholder { height: 200px; }
+
+    .about-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+    .about-layout .placeholder { min-height: 240px; }
+
+    .contact .placeholder { height: 160px; }
+
+    .carousel { display: flex; align-items: center; gap: 12px; }
+    .carousel-viewport { flex: 1; overflow: hidden; }
+    .carousel-track { display: flex; gap: 24px; transition: transform 0.3s ease; }
+    .video-slide { flex: 0 0 calc((100% - 24px) / 2); }
+    .video-box, .video-slide iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; }
+    .carousel-btn { flex: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #b5b5b5; background: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; }
+    .carousel-btn:hover:not(:disabled) { background: #eee; }
+    .carousel-btn:disabled { opacity: 0.35; cursor: default; }
+
+    /* Footer */
+    footer { background: #f3f3f3; border-top: 1px solid #ddd; padding: 24px 0; text-align: center; color: #666; }
+      .social { display: flex; justify-content: center; gap: 20px; }
+    .social a { color: #555; display: inline-flex; }
+    .social a:hover, .social a:focus-visible { color: #222; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo placeholder">Logo</div>
+      <div class="header-title">
+        <strong>Komma László #36</strong>
+        <span>Hivatalos weboldal</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="intro">
+      <div class="container">
+        <h2>Bemutatkozó</h2>
+        <div class="intro-layout">
+          <div class="placeholder">Text placeholder</div>
+          <div class="placeholder">Picture placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <h2>Statisztika</h2>
+        <div class="table-wrap small-table-wrap">
+          <table class="stat-table">
+            <tr><th>&nbsp;</th><th>&nbsp;</th></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="stat-table">
+            <tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+          </table>
+        </div>
+        <div class="placeholder stat-picture">Picture placeholder</div>
+      </div>
+    </section>
+
+    <section id="about" class="intro">
+      <div class="container">
+        <h2>Laci konyhája</h2>
+        <div class="intro-layout intro-layout-reverse">
+          <div class="placeholder">Picture placeholder</div>
+          <div class="placeholder">Text placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="videos">
+      <div class="container">
+        <h2>Videók</h2>
+        <div class="carousel">
+          <button class="carousel-btn" id="prev" aria-label="Előző videó">&#8249;</button>
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="track">
+            <!-- To use a real video, replace a placeholder box with:
+                 <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video" allowfullscreen></iframe> -->
+            <div class="video-slide">
+              <div class="placeholder video-box">YouTube video placeholder 1</div>
+            </div>
+            <div class="video-slide">
+              <div class="placeholder video-box">YouTube video placeholder 2</div>
+            </div>
+            <div class="video-slide">
+              <div class="placeholder video-box">YouTube video placeholder 3</div>
+            </div>
+            <div class="video-slide">
+              <div class="placeholder video-box">YouTube video placeholder 4</div>
+            </div>
+            <div class="video-slide">
+              <div class="placeholder video-box">YouTube video placeholder 5</div>
+            </div>
+            <div class="video-slide">
+              <div class="placeholder video-box">YouTube video placeholder 6</div>
+            </div>
+            </div>
+          </div>
+          <button class="carousel-btn" id="next" aria-label="Következő videó">&#8250;</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="social">
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+            <circle cx="16" cy="16" r="16" fill="currentColor"/>
+            <text x="16" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="26" fill="#fff">f</text>
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+            <rect width="32" height="32" rx="6" fill="currentColor"/>
+            <text x="16" y="23" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="17" fill="#fff">in</text>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="currentColor" stroke-width="3"/>
+            <circle cx="16" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="3"/>
+            <circle cx="24" cy="8" r="2" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var track = document.getElementById('track');
+      var prev = document.getElementById('prev');
+      var next = document.getElementById('next');
+      var total = track.children.length;
+      var visible = 2;
+      var index = 0;
+
+      function update() {
+        track.style.transform = 'translateX(calc(' + (-index) + ' * ((100% - 24px) / 2 + 24px)))';
+        prev.disabled = index === 0;
+        next.disabled = index >= total - visible;
+      }
+
+      prev.addEventListener('click', function () { if (index > 0) { index--; update(); } });
+      next.addEventListener('click', function () { if (index < total - visible) { index++; update(); } });
+      update();
+    })();
+  </script>
+</body>
+</html>
