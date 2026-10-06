@@ -34,11 +34,11 @@
     .placeholder:hover, .stat-table:hover { filter: invert(1); }
 
     /* Header */
-    header { background: #f57c00; color: #fff; font-family: 'Bangers', cursive; letter-spacing: 0.04em; height: 144px; }
-    header .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; height: 100%; }
-    .logo { height: calc(100% - 1cm); width: auto; align-self: flex-end; display: block; }
+    header { background: #f57c00; color: #fff; font-family: 'Bangers', cursive; letter-spacing: 0.04em; height: 144px; padding: 0; }
+    header .container { height: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: nowrap; }
+    .logo { height: calc(144px - 1cm); width: auto; display: block; align-self: flex-end; max-width: 45%; object-fit: contain; object-position: left bottom; }
     .header-title { text-align: right; line-height: 1.3; }
-    .header-title strong { display: block; font-size: 2.75rem; }
+    .header-title strong { display: block; font-size: clamp(1.6rem, 5vw, 2.75rem); }
     .header-title span { display: block; font-size: 0.9rem; color: #fff; }
 
     .subheader { background: #555; color: #fff; font-family: 'Bangers', cursive; letter-spacing: 0.04em; padding: 8px 0; font-size: 1.1rem; text-align: center; }
