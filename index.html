@@ -1,14 +1,21 @@
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Site Title</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Roboto Condensed', Arial Narrow, sans-serif;
@@ -17,7 +24,11 @@
       background: linear-gradient(to right, #000 calc(100% - 4cm), #f57c00 100%);
     }
 
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
     .placeholder {
       background: #e6e6e6;
@@ -30,97 +41,341 @@
       padding: 16px;
     }
 
-    .placeholder, .stat-table { transition: filter 0.2s ease; }
-    .placeholder:hover, .stat-table:hover { filter: invert(1); }
+    .placeholder,
+    .stat-table {
+      transition: filter 0.2s ease;
+    }
+
+    .placeholder:hover,
+    .stat-table:hover {
+      filter: invert(1);
+    }
+
+    /* Picture placeholders */
+
+    .picture-placeholder {
+      background: #fff;
+      border: 8px solid #fff;
+      outline: 2px solid #b5b5b5;
+      color: #666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .picture-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     /* Header */
 
-    /* Header */
-    .top { position: relative; color: #fff; font-family: 'Bangers', cursive; letter-spacing: 0.04em; }
-    .bar-orange { position: relative; background: #000; height: calc(144px + 1cm); overflow: hidden; }
-    .bar-orange::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 34%; background: url('lacivalogatott.jpg') center / cover no-repeat; filter: grayscale(1); opacity: 0.3; -webkit-mask-image: linear-gradient(to right, transparent, #000 30%); mask-image: linear-gradient(to right, transparent, #000 30%); }
-    .bar-orange::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 4cm; background: linear-gradient(to right, rgba(245, 124, 0, 0), #f57c00); }
-    .bar-grey { background: linear-gradient(to right, #555 calc(100% - 4cm), #f57c00 100%); height: 40px; }
-    .top-overlay { position: absolute; top: 0; bottom: 0; left: 0; right: 0; max-width: none; margin: 0; padding-left: 0; padding-right: max(20px, calc((100% - 1000px) / 2 + 20px)); display: flex; align-items: flex-end; gap: 20px; }
-    .logo { flex: none; height: calc(100% - 0.5cm); width: auto; max-width: 40%; object-fit: contain; object-position: left bottom; display: block; }
-    .top-text { flex: 1; min-width: 0; align-self: stretch; display: flex; flex-direction: column; }
-    .header-title { height: calc(144px + 1cm); padding-top: 1cm; margin-left: calc(2cm - 20px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; text-align: left; line-height: 1.15; }
-    .header-title strong { display: block; font-size: clamp(2rem, 8vw, 5rem); }
-    .header-title span { display: block; font-size: 0.9rem; }
-    .subheader-text { height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .top {
+      position: relative;
+      color: #fff;
+      font-family: 'Bangers', cursive;
+      letter-spacing: 0.04em;
+    }
+
+    .bar-orange {
+      position: relative;
+      background: #000;
+      height: calc(144px + 1cm);
+      overflow: hidden;
+    }
+
+    .bar-orange::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 34%;
+      background: url('lacivalogatott.jpg') center / cover no-repeat;
+      filter: grayscale(1);
+      opacity: 0.3;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 30%);
+      mask-image: linear-gradient(to right, transparent, #000 30%);
+    }
+
+    .bar-orange::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 4cm;
+      background: linear-gradient(to right, rgba(245, 124, 0, 0), #f57c00);
+    }
+
+    .bar-grey {
+      background: linear-gradient(to right, #555 calc(100% - 4cm), #f57c00 100%);
+      height: 40px;
+    }
+
+    .top-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-width: none;
+      margin: 0;
+      padding-left: 0;
+      padding-right: max(20px, calc((100% - 1000px) / 2 + 20px));
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+    }
+
+    .logo {
+      flex: none;
+      height: calc(100% - 0.5cm);
+      width: auto;
+      max-width: 40%;
+      object-fit: contain;
+      object-position: left bottom;
+      display: block;
+    }
+
+    .top-text {
+      flex: 1;
+      min-width: 0;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-title {
+      height: calc(144px + 1cm);
+      padding-top: 1cm;
+      margin-left: calc(2cm - 20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      line-height: 1.15;
+    }
+
+    .header-title strong {
+      display: block;
+      font-size: clamp(2rem, 8vw, 5rem);
+    }
+
+    .header-title span {
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .subheader-text {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
 
     /* Sections */
-    section { padding: 60px 0; }
-    section + section { border-top: 1px solid #b8b8b8; }
 
-    .intro-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
-    .intro-layout-reverse { grid-template-columns: 1fr 2fr; }
-    .intro-layout .placeholder { min-height: 320px; }
+    section {
+      padding: 60px 0;
+    }
 
-    h2 { margin-bottom: 24px; }
+    section + section {
+      border-top: 1px solid #b8b8b8;
+    }
 
-    .table-wrap { overflow-x: auto; margin-bottom: 32px; }
-    .small-table-wrap { max-width: 360px; }
-    .stat-table { width: 100%; border-collapse: collapse; color: #222; }
-    .stat-table th, .stat-table td { border: 1px solid #b5b5b5; padding: 10px; min-width: 60px; height: 40px; background: #f2f2f2; }
-    .stat-table th { background: #e0e0e0; }
-    .stat-picture { height: 280px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-    .grid .placeholder { height: 200px; }
+    .intro-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
 
-    .about-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
-    .about-layout .placeholder { min-height: 240px; }
+    .intro-layout-reverse {
+      grid-template-columns: 1fr 2fr;
+    }
 
-    .contact .placeholder { height: 160px; }
+    .intro-layout .placeholder,
+    .intro-layout .picture-placeholder {
+      min-height: 320px;
+    }
 
-    .carousel { display: flex; align-items: center; gap: 12px; }
-    .carousel-viewport { flex: 1; overflow: hidden; }
-    .carousel-track { display: flex; gap: 24px; transition: transform 0.3s ease; }
-    .video-slide { flex: 0 0 calc((100% - 24px) / 2); }
-    .video-box, .video-slide iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; }
-    .video-title { margin-top: 10px; font-size: 1.15rem; font-weight: 700; }
-    .carousel-btn { font-family: inherit; flex: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #b5b5b5; background: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; }
-    .carousel-btn:hover:not(:disabled) { background: #eee; }
-    .carousel-btn:disabled { opacity: 0.35; cursor: default; }
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    /* Tables */
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-bottom: 32px;
+    }
+
+    .small-table-wrap {
+      max-width: 360px;
+    }
+
+    .stat-table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #222;
+    }
+
+    .stat-table th,
+    .stat-table td {
+      border: 1px solid #b5b5b5;
+      padding: 10px;
+      min-width: 60px;
+      height: 40px;
+      background: #f2f2f2;
+    }
+
+    .stat-table th {
+      background: #e0e0e0;
+    }
+
+    .stat-picture {
+      height: 280px;
+    }
+
+    /* Video carousel */
+
+    .carousel {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .carousel-viewport {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .video-slide {
+      flex: 0 0 calc((100% - 24px) / 2);
+    }
+
+    .video-box,
+    .video-slide iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+    }
+
+    .video-title {
+      margin-top: 10px;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .carousel-btn {
+      font-family: inherit;
+      flex: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid #b5b5b5;
+      background: #fff;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .carousel-btn:hover:not(:disabled) {
+      background: #eee;
+    }
+
+    .carousel-btn:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
 
     /* Footer */
-    footer { background: #f3f3f3; border-top: 1px solid #ddd; padding: 24px 0; text-align: center; color: #666; }
-      .social { display: flex; justify-content: center; gap: 20px; }
-    .social a { color: #555; display: inline-flex; }
-    .social a:hover, .social a:focus-visible { color: #222; }
+
+    footer {
+      background: #f3f3f3;
+      border-top: 1px solid #ddd;
+      padding: 24px 0;
+      text-align: center;
+      color: #666;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social a {
+      color: #555;
+      display: inline-flex;
+    }
+
+    .social a:hover,
+    .social a:focus-visible {
+      color: #222;
+    }
   </style>
 </head>
+
 <body>
 
   <header class="top">
     <div class="bar-orange"></div>
     <div class="bar-grey"></div>
+
     <div class="top-overlay container">
       <img class="logo" src="Picture2.png" alt="Logo">
+
       <div class="top-text">
         <div class="header-title">
           <strong>Komma László #36</strong>
           <span>Hivatalos weboldal</span>
         </div>
-        <div class="subheader-text">Kosárlabda, zene, kaja és még sok más</div>
+
+        <div class="subheader-text">
+          Kosárlabda, zene, kaja és még sok más
+        </div>
       </div>
     </div>
   </header>
 
   <main>
+
     <section id="home" class="intro">
       <div class="container">
         <h2>Egy mázsa jófejség</h2>
+
         <div class="intro-layout">
-          <div class="placeholder">Text placeholder</div>
-          <div class="placeholder">Picture placeholder</div>
+
+          <div class="placeholder">
+            Text placeholder
+          </div>
+
+          <div class="picture-placeholder">
+            <img src="papi.jpg" alt="Papi">
+          </div>
+
         </div>
       </div>
     </section>
 
     <section id="features">
       <div class="container">
+
         <h2>Statisztika</h2>
+
         <div class="table-wrap small-table-wrap">
           <table class="stat-table">
             <tr><th>&nbsp;</th><th>&nbsp;</th></tr>
@@ -130,94 +385,212 @@
             <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
           </table>
         </div>
+
         <div class="table-wrap">
           <table class="stat-table">
-            <tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr>
+              <th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th>
+              <th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th>
+            </tr>
+            <tr>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+              <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+            </tr>
           </table>
         </div>
-        <div class="placeholder stat-picture">Picture placeholder</div>
+
+        <div class="picture-placeholder stat-picture">
+          Picture placeholder
+        </div>
+
       </div>
     </section>
 
     <section id="about" class="intro">
       <div class="container">
+
         <h2>Laci konyhája</h2>
+
         <div class="intro-layout intro-layout-reverse">
-          <div class="placeholder">Picture placeholder</div>
-          <div class="placeholder">Text placeholder</div>
+
+          <div class="picture-placeholder">
+            Picture placeholder
+          </div>
+
+          <div class="placeholder">
+            Text placeholder
+          </div>
+
         </div>
       </div>
     </section>
 
     <section id="contact" class="videos">
       <div class="container">
+
         <h2>Videók</h2>
+
         <div class="carousel">
-          <button class="carousel-btn" id="prev" aria-label="Előző videó">&#8249;</button>
+
+          <button class="carousel-btn" id="prev" aria-label="Előző videó">
+            &#8249;
+          </button>
+
           <div class="carousel-viewport">
             <div class="carousel-track" id="track">
-            <!-- To use a real video, replace a placeholder box with:
-                 <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video" allowfullscreen></iframe> -->
-            <div class="video-slide">
-              <iframe src="https://www.youtube.com/embed/iEQDYT5SIHU" title="Köszöntünk a zenés karácsonyban" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <p class="video-title">Köszöntünk a zenés karácsonyban</p>
-            </div>
-            <div class="video-slide">
-              <iframe src="https://www.youtube.com/embed/gyM_VvPzyts" title="Karácsonyi zenés köszöntő" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <p class="video-title">Karácsonyi zenés köszöntő</p>
-            </div>
-            <div class="video-slide">
-              <iframe src="https://www.youtube.com/embed/Jl6wTAtRsNg" title="Zenés karácsonyi köszöntő" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <p class="video-title">Zenés karácsonyi köszöntő</p>
-            </div>
-            <div class="video-slide">
-              <div class="placeholder video-box">YouTube video placeholder 4</div>
-              <p class="video-title">Title placeholder</p>
-            </div>
-            <div class="video-slide">
-              <div class="placeholder video-box">YouTube video placeholder 5</div>
-              <p class="video-title">Title placeholder</p>
-            </div>
-            <div class="video-slide">
-              <div class="placeholder video-box">YouTube video placeholder 6</div>
-              <p class="video-title">Title placeholder</p>
-            </div>
+
+              <div class="video-slide">
+                <iframe
+                  src="https://www.youtube.com/embed/iEQDYT5SIHU"
+                  title="Köszöntünk a zenés karácsonyban"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+                <p class="video-title">
+                  Köszöntünk a zenés karácsonyban
+                </p>
+              </div>
+
+              <div class="video-slide">
+                <iframe
+                  src="https://www.youtube.com/embed/gyM_VvPzyts"
+                  title="Karácsonyi zenés köszöntő"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+                <p class="video-title">
+                  Karácsonyi zenés köszöntő
+                </p>
+              </div>
+
+              <div class="video-slide">
+                <iframe
+                  src="https://www.youtube.com/embed/Jl6wTAtRsNg"
+                  title="Zenés karácsonyi köszöntő"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+                <p class="video-title">
+                  Zenés karácsonyi köszöntő
+                </p>
+              </div>
+
+              <div class="video-slide">
+                <div class="placeholder video-box">
+                  YouTube video placeholder 4
+                </div>
+                <p class="video-title">Title placeholder</p>
+              </div>
+
+              <div class="video-slide">
+                <div class="placeholder video-box">
+                  YouTube video placeholder 5
+                </div>
+                <p class="video-title">Title placeholder</p>
+              </div>
+
+              <div class="video-slide">
+                <div class="placeholder video-box">
+                  YouTube video placeholder 6
+                </div>
+                <p class="video-title">Title placeholder</p>
+              </div>
+
             </div>
           </div>
-          <button class="carousel-btn" id="next" aria-label="Következő videó">&#8250;</button>
+
+          <button class="carousel-btn" id="next" aria-label="Következő videó">
+            &#8250;
+          </button>
+
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="container">
+
       <div class="social">
+
         <a href="#" aria-label="Facebook">
           <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
             <circle cx="16" cy="16" r="16" fill="currentColor"/>
-            <text x="16" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="26" fill="#fff">f</text>
+            <text
+              x="16"
+              y="25"
+              text-anchor="middle"
+              font-family="Arial, sans-serif"
+              font-weight="700"
+              font-size="26"
+              fill="#fff">f</text>
           </svg>
         </a>
+
         <a href="#" aria-label="LinkedIn">
           <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
             <rect width="32" height="32" rx="6" fill="currentColor"/>
-            <text x="16" y="23" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="17" fill="#fff">in</text>
+            <text
+              x="16"
+              y="23"
+              text-anchor="middle"
+              font-family="Arial, sans-serif"
+              font-weight="700"
+              font-size="17"
+              fill="#fff">in</text>
           </svg>
         </a>
+
         <a href="#" aria-label="Instagram">
           <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
-            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="currentColor" stroke-width="3"/>
-            <circle cx="16" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="3"/>
-            <circle cx="24" cy="8" r="2" fill="currentColor"/>
+            <rect
+              x="1.5"
+              y="1.5"
+              width="29"
+              height="29"
+              rx="8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"/>
+            <circle
+              cx="16"
+              cy="16"
+              r="6.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"/>
+            <circle
+              cx="24"
+              cy="8"
+              r="2"
+              fill="currentColor"/>
           </svg>
         </a>
+
       </div>
     </div>
   </footer>
@@ -227,20 +600,39 @@
       var track = document.getElementById('track');
       var prev = document.getElementById('prev');
       var next = document.getElementById('next');
+
       var total = track.children.length;
       var visible = 2;
       var index = 0;
 
       function update() {
-        track.style.transform = 'translateX(calc(' + (-index) + ' * ((100% - 24px) / 2 + 24px)))';
+        track.style.transform =
+          'translateX(calc(' +
+          (-index) +
+          ' * ((100% - 24px) / 2 + 24px)))';
+
         prev.disabled = index === 0;
         next.disabled = index >= total - visible;
       }
 
-      prev.addEventListener('click', function () { if (index > 0) { index--; update(); } });
-      next.addEventListener('click', function () { if (index < total - visible) { index++; update(); } });
+      prev.addEventListener('click', function () {
+        if (index > 0) {
+          index--;
+          update();
+        }
+      });
+
+      next.addEventListener('click', function () {
+        if (index < total - visible) {
+          index++;
+          update();
+        }
+      });
+
       update();
     })();
   </script>
+
 </body>
 </html>
+```
