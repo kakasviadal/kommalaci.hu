@@ -17,7 +17,7 @@
       background: #d0d0d0;
     }
 
-    .container { width: 100%; max-width: none; margin: 0; padding: 0 20px; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
     .placeholder {
       background: #e6e6e6;
@@ -39,7 +39,7 @@
     .top { position: relative; color: #fff; font-family: 'Bangers', cursive; letter-spacing: 0.04em; }
     .bar-orange { background: #f57c00; height: 144px; }
     .bar-grey { background: #555; height: 40px; }
-    .top-overlay { position: absolute; top: 0; bottom: 0; left: 0; right: 0; display: flex; align-items: flex-end; gap: 20px; }
+    .top-overlay { position: absolute; top: 0; bottom: 0; left: 0; right: 0; max-width: none; margin: 0; padding-left: 0; padding-right: max(20px, calc((100% - 1000px) / 2 + 20px)); display: flex; align-items: flex-end; gap: 20px; }
     .logo { flex: none; height: calc(100% - 0.5cm); width: auto; max-width: 40%; object-fit: contain; object-position: left bottom; display: block; }
     .top-text { flex: 1; min-width: 0; align-self: stretch; display: flex; flex-direction: column; }
     .header-title { height: 144px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; text-align: right; line-height: 1.15; }
