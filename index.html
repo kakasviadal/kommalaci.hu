@@ -50,6 +50,37 @@
       filter: invert(1);
     }
 
+    /* Text box (placeholder box holding real text) */
+
+    .placeholder.text-box {
+      display: block;
+      text-align: left;
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .placeholder.text-box:hover {
+      background: #fff;
+      color: #000;
+      filter: none;
+    }
+
+    .text-box p {
+      margin-bottom: 14px;
+    }
+
+    .text-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .recipe-title {
+      font-size: 2em;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
     /* Picture placeholders */
 
     .picture-placeholder {
@@ -436,8 +467,22 @@
             Picture placeholder
           </div>
 
-          <div class="placeholder">
-            Text placeholder
+          <div class="placeholder text-box">
+            <p class="recipe-title">Rántotta 5 tojásból (Laci kedvenc reggelije)</p>
+
+            <p>
+              Hozzávalók:<br>
+              -5 darab tojás<br>
+              -só
+            </p>
+
+            <p>1, Egy serpenyőbe tegyünk olívaolajat, majd állítsuk közepes hőfokra.</p>
+
+            <p>2, Miután felhevült, az 5 darab tojást óvatosan törjük bele a serpenyőbe és ott kezdjük el fakanállal jól összedolgozni, amíg nem lesz túlságosan elszeparálva a fehér és sárga része. Hintsünk rá egy teáskanálnyi sót.</p>
+
+            <p>3, Amint a tojás állaga "taknyossá" válik, vegyük le a serpenyőt a tűzhelyről és tálaljuk.</p>
+
+            <p>Tipp: Tálaláshoz javasolt a tojás mellé friss zöldség, sonka, zsírszalonna, kenyér, különböző sajtkülönlegességek.</p>
           </div>
 
         </div>
