@@ -111,10 +111,11 @@
       flex-direction: column;
       align-items: center;
       padding: 28px 12px;
-      background: #555;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.35);
       color: #fff;
       text-decoration: none;
-      transition: background 0.3s ease, color 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
 
     .menu-box:hover,
@@ -137,6 +138,7 @@
     }
 
     .menu-icon {
+      color: #f57c00;
       width: 64px;
       height: 64px;
       object-fit: contain;
@@ -412,6 +414,52 @@
       cursor: default;
     }
 
+    /* Big background icons */
+
+    section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* All background icons share one size: 125% of the first section's height
+       (set by the script at the bottom as --icon-size). Each icon sits in a box
+       anchored to the bottom of its section (on the dividing line); the box is 80% of that
+       size, so the icon's left 1/5 and bottom 1/5 are cut off. */
+    section::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: calc(var(--icon-size, 40vw) * 0.8);
+      height: calc(var(--icon-size, 40vw) * 0.8);
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-size: var(--icon-size, 40vw) var(--icon-size, 40vw);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    section > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    #home::before {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%20fill=%22none%22%20stroke=%22%23ffb366%22%20stroke-opacity=%220.16%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Ccircle%20cx=%2232%22%20cy=%2220%22%20r=%2210%22/%3E%3Cpath%20d=%22M12%2056%20C12%2042%2021%2035%2032%2035%20C43%2035%2052%2042%2052%2056%22/%3E%3C/svg%3E");
+    }
+
+    #features::before {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%20fill=%22none%22%20stroke=%22%23ffb366%22%20stroke-opacity=%220.16%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Ccircle%20cx=%2232%22%20cy=%2232%22%20r=%2222%22/%3E%3Cline%20x1=%2232%22%20y1=%2210%22%20x2=%2232%22%20y2=%2254%22/%3E%3Cline%20x1=%2210%22%20y1=%2232%22%20x2=%2254%22%20y2=%2232%22/%3E%3Cpath%20d=%22M15%2015%20C25%2024%2025%2040%2015%2049%22/%3E%3Cpath%20d=%22M49%2015%20C39%2024%2039%2040%2049%2049%22/%3E%3C/svg%3E");
+    }
+
+    #about::before {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%20fill=%22none%22%20stroke=%22%23ffb366%22%20stroke-opacity=%220.16%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cg%20transform=%22rotate%2835%2032%2032%29%20translate%2810%200%29%22%3E%3Cpath%20d=%22M16%208%20V22%20C16%2029%2028%2029%2028%2022%20V8%22/%3E%3Cpath%20d=%22M22%208%20V56%22/%3E%3C/g%3E%3Cg%20transform=%22rotate%28-35%2032%2032%29%20translate%28-14%200%29%22%3E%3Cpath%20d=%22M42%2056%20V8%20C52%2012%2054%2028%2048%2038%20H42%22/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    #contact::before {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%20fill=%22none%22%20stroke=%22%23ffb366%22%20stroke-opacity=%220.16%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M30%2047%20V16%20L52%2011%20V42%22/%3E%3Cellipse%20cx=%2222%22%20cy=%2248%22%20rx=%228%22%20ry=%226%22/%3E%3Cellipse%20cx=%2244%22%20cy=%2243%22%20rx=%228%22%20ry=%226%22/%3E%3C/svg%3E");
+    }
+
     /* Footer */
 
     footer {
@@ -481,7 +529,7 @@
           </a>
 
           <a class="menu-box" href="#about">
-            <svg class="menu-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 40 C9 40 7 26 17 24 C16 13 29 8 33 15 C38 8 51 13 48 24 C57 26 55 40 46 40"/><path d="M18 40 V55 H46 V40"/><line x1="18" y1="48" x2="46" y2="48"/></svg>
+            <svg class="menu-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="rotate(35 32 32) translate(10 0)"><path d="M16 8 V22 C16 29 28 29 28 22 V8"/><path d="M22 8 V56"/></g><g transform="rotate(-35 32 32) translate(-14 0)"><path d="M42 56 V8 C52 12 54 28 48 38 H42"/></g></svg>
             <span class="menu-label">Laci konyhája</span>
           </a>
 
@@ -785,6 +833,24 @@
       });
 
       update();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var home = document.getElementById('home');
+
+      function setIconSize() {
+        document.documentElement.style.setProperty('--icon-size', (home.offsetHeight * 1.25) + 'px');
+      }
+
+      setIconSize();
+      window.addEventListener('load', setIconSize);
+      window.addEventListener('resize', setIconSize);
+
+      if (window.ResizeObserver) {
+        new ResizeObserver(setIconSize).observe(home);
+      }
     })();
   </script>
 
