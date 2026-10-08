@@ -89,6 +89,71 @@
       line-height: 1.2;
     }
 
+    /* Menu boxes */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .menu h2 {
+      text-align: center;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .menu-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 28px 12px;
+      background: #555;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .menu-box:hover,
+    .menu-box:focus-visible {
+      background: #fff;
+      color: #222;
+    }
+
+    .icon-placeholder {
+      width: 64px;
+      height: 64px;
+      border: 2px dashed currentColor;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      flex: none;
+    }
+
+    .menu-label {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    }
+
+    .menu-box:hover .menu-label,
+    .menu-box:focus-visible .menu-label {
+      max-height: 4.5rem;
+      opacity: 1;
+      margin-top: 16px;
+    }
+
     /* Picture placeholders */
 
     .picture-placeholder {
@@ -390,6 +455,36 @@
   </header>
 
   <main>
+
+    <section id="menu" class="menu">
+      <div class="container">
+
+        <h2>Menüpontok</h2>
+
+        <div class="menu-grid">
+          <a class="menu-box" href="#home">
+            <div class="icon-placeholder">icon</div>
+            <span class="menu-label">Egy mázsa jófejség</span>
+          </a>
+
+          <a class="menu-box" href="#features">
+            <div class="icon-placeholder">icon</div>
+            <span class="menu-label">Statisztika</span>
+          </a>
+
+          <a class="menu-box" href="#about">
+            <div class="icon-placeholder">icon</div>
+            <span class="menu-label">Laci konyhája</span>
+          </a>
+
+          <a class="menu-box" href="#contact">
+            <div class="icon-placeholder">icon</div>
+            <span class="menu-label">Videók</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
 
     <section id="home" class="intro">
       <div class="container">
