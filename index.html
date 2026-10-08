@@ -646,6 +646,73 @@
         flex-direction: column;
       }
     }
+    /* Make each section fill one screen, except Statistics */
+section:not(#features) {
+  min-height: 100vh;
+  min-height: 100svh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+section:not(#features) > .container {
+  width: 100%;
+}
+
+/* Keep Statistics at its natural height */
+#features {
+  min-height: auto;
+}
+
+/* Make the memory game more compact */
+#memory .memory-board {
+  max-width: 560px;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+
+#memory .memory-info {
+  margin-bottom: 14px;
+  gap: 20px;
+  font-size: 1rem;
+}
+
+#memory .strike {
+  width: 22px;
+  height: 22px;
+  font-size: 0.8rem;
+}
+
+#memory .memory-message {
+  min-height: 22px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+#memory .memory-reset {
+  padding: 7px 18px;
+}
+
+#memory h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+@media (max-height: 750px) {
+  #memory .memory-board {
+    max-width: 440px;
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+
+  #memory .memory-info {
+    margin-bottom: 8px;
+  }
+
+  #memory h2 {
+    margin-bottom: 8px;
+  }
+}
   </style>
 </head>
 
