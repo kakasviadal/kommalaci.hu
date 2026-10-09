@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Site Title</title>
+  <title>Komma László Hivatalos</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -476,6 +476,8 @@
 
     .strikes {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 8px;
     }
 
@@ -777,7 +779,7 @@
 
       <div class="container">
 
-        <h2>Menüpontok</h2>
+        <h2>Navigálás</h2>
 
         <div class="menu-grid">
 
@@ -986,13 +988,13 @@
 
               <div class="video-slide">
                 <iframe
-                  src="https://www.youtube.com/embed/gyM_VvPzyts"
-                  title="Karácsonyi zenés köszöntő"
+                  src="https://www.youtube.com/embed/n3PM5MQeQDQ"
+                  title="2024-25 Highlights"
                   loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen>
                 </iframe>
-                <p class="video-title">Karácsonyi zenés köszöntő</p>
+                <p class="video-title">2024-25 Highlights</p>
               </div>
 
               <div class="video-slide">
@@ -1007,18 +1009,25 @@
               </div>
 
               <div class="video-slide">
-                <div class="placeholder video-box">YouTube video placeholder 4</div>
-                <p class="video-title">Title placeholder</p>
+                <iframe
+                  src="https://www.youtube.com/embed/igUvcyipN4Y"
+                  title="2025-26 Highlights"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+                <p class="video-title">2025-26 Highlights</p>
               </div>
 
               <div class="video-slide">
-                <div class="placeholder video-box">YouTube video placeholder 5</div>
-                <p class="video-title">Title placeholder</p>
-              </div>
-
-              <div class="video-slide">
-                <div class="placeholder video-box">YouTube video placeholder 6</div>
-                <p class="video-title">Title placeholder</p>
+                <iframe
+                  src="https://www.youtube.com/embed/gyM_VvPzyts"
+                  title="Karácsonyi zenés köszöntő"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+                <p class="video-title">Karácsonyi zenés köszöntő</p>
               </div>
 
             </div>
@@ -1048,7 +1057,7 @@
 
           <div>
             Hibák:
-            <span id="mistakes">0</span> / 5
+            <span id="mistakes">0</span> / 10
           </div>
 
           <div class="strikes" id="strikes">
@@ -1057,6 +1066,11 @@
             <div class="strike">3</div>
             <div class="strike">4</div>
             <div class="strike">5</div>
+            <div class="strike">6</div>
+            <div class="strike">7</div>
+            <div class="strike">8</div>
+            <div class="strike">9</div>
+            <div class="strike">10</div>
           </div>
 
         </div>
@@ -1204,7 +1218,7 @@
       var mistakes = 0;
       var matchedPairs = 0;
 
-      var maxMistakes = 5;
+      var maxMistakes = 10;
 
       function shuffle(array) {
 
