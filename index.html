@@ -331,6 +331,45 @@
       max-width: 360px;
     }
 
+    .stat-table.player-table {
+      font-size: 10pt;
+      color: #fff;
+    }
+
+    .stat-table.player-table th,
+    .stat-table.player-table td {
+      padding: 1px 8px;
+      height: auto;
+      line-height: 1.25;
+      min-width: 0;
+      text-align: center;
+      color: #fff;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .stat-table.player-table th {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .stat-table.player-table th:first-child,
+    .stat-table.player-table td:first-child {
+      text-align: left;
+    }
+
+    /* Hover: only the row under the cursor flips to white background, black text */
+
+    .stat-table.player-table:hover {
+      filter: none;
+    }
+
+    .stat-table.player-table tr:hover td,
+    .stat-table.player-table tr:hover th {
+      background: #fff;
+      color: #000;
+    }
+
     .stat-table {
       width: 100%;
       border-collapse: collapse;
@@ -352,6 +391,96 @@
 
     .stat-picture {
       height: 280px;
+    }
+
+    .stat-top {
+      display: grid;
+      grid-template-columns: minmax(260px, 360px) 1fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 32px;
+    }
+
+    .stat-top .small-table-wrap {
+      margin-bottom: 0;
+    }
+
+    .stat-top .stat-picture {
+      height: auto;
+      min-height: 240px;
+      position: relative;
+    }
+
+    .stat-top .stat-picture img {
+      position: absolute;
+      inset: 0;
+    }
+
+    .stat-top .stat-picture img.stat-photo {
+      filter: grayscale(1);
+    }
+
+    .stat-top .stat-picture img.nka-logo {
+      inset: auto;
+      left: 14px;
+      bottom: 14px;
+      width: clamp(60px, 18%, 130px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    @media (max-width: 700px) {
+      .stat-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pic-carousel {
+      position: relative;
+      min-width: 0;
+    }
+
+    .pic-carousel .carousel-viewport {
+      width: 100%;
+    }
+
+    .pic-slide {
+      flex: 0 0 100%;
+      position: relative;
+      aspect-ratio: 3 / 2;
+    }
+
+    .pic-slide img {
+      position: absolute;
+      inset: 0;
+    }
+
+    .pic-carousel .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 56px;
+      height: 80px;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      color: #fff;
+      font-size: 3.2rem;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .pic-carousel .carousel-btn:hover:not(:disabled) {
+      background: transparent;
+      opacity: 0.7;
+    }
+
+    .pic-carousel #picPrev {
+      left: 8px;
+    }
+
+    .pic-carousel #picNext {
+      right: 8px;
     }
 
     /* Video carousel */
@@ -788,7 +917,7 @@
               <circle cx="32" cy="20" r="10"/>
               <path d="M12 56 C12 42 21 35 32 35 C43 35 52 42 52 56"/>
             </svg>
-            <span class="menu-label">Egy mázsa jófejség</span>
+            <span class="menu-label">2 méter 100 kiló</span>
           </a>
 
           <a class="menu-box" href="#features">
@@ -848,12 +977,25 @@
 
       <div class="container">
 
-        <h2>Egy mázsa jófejség</h2>
+        <h2>2 méter 100 kiló</h2>
 
         <div class="intro-layout">
 
-          <div class="placeholder">
-            Text placeholder
+          <div class="carousel pic-carousel">
+
+            <button class="carousel-btn" id="picPrev" aria-label="Előző kép">&#8249;</button>
+
+            <div class="carousel-viewport">
+              <div class="carousel-track" id="picTrack">
+              <div class="picture-placeholder pic-slide"><img src="kep1.jpg" alt=""></div>
+              <div class="picture-placeholder pic-slide"><img src="kep2.jpg" alt=""></div>
+              <div class="picture-placeholder pic-slide"><img src="kep3.jpg" alt=""></div>
+              <div class="picture-placeholder pic-slide"><img src="kep4.jpg" alt=""></div>
+              </div>
+            </div>
+
+            <button class="carousel-btn" id="picNext" aria-label="Következő kép">&#8250;</button>
+
           </div>
 
           <div class="picture-placeholder">
@@ -875,14 +1017,34 @@
 
         <h2>Statisztika</h2>
 
+        <div class="stat-top">
         <div class="table-wrap small-table-wrap">
-          <table class="stat-table">
-            <tr><th>&nbsp;</th><th>&nbsp;</th></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+          <table class="stat-table player-table">
+            <tr><th>Mutató</th><th>Átlag</th></tr>
+            <tr><td>Pont</td><td>5</td></tr>
+            <tr><td>Közeli bedobott</td><td>1.5</td></tr>
+            <tr><td>Közeli %</td><td>75</td></tr>
+            <tr><td>Középtáv bedobott</td><td>0</td></tr>
+            <tr><td>Középtáv %</td><td>0</td></tr>
+            <tr><td>Távoli bedobott</td><td>0</td></tr>
+            <tr><td>Távoli %</td><td>0</td></tr>
+            <tr><td>Összes bedobott</td><td>1.5</td></tr>
+            <tr><td>Összes %</td><td>75</td></tr>
+            <tr><td>Büntető bedobott</td><td>2</td></tr>
+            <tr><td>Büntető %</td><td>100</td></tr>
+            <tr><td>Lepattanó</td><td>0</td></tr>
+            <tr><td>Szerzett labda</td><td>0</td></tr>
+            <tr><td>Assziszt</td><td>0</td></tr>
+            <tr><td>Blokk</td><td>1.5</td></tr>
+            <tr><td>VAL</td><td>6</td></tr>
+            <tr><td>Idő</td><td>13.5</td></tr>
           </table>
+        </div>
+
+          <div class="picture-placeholder stat-picture">
+            <img class="stat-photo" src="kosar.jpg" alt="Kosár">
+            <img class="nka-logo" src="nka.png" alt="NKA">
+          </div>
         </div>
 
         <div class="table-wrap">
@@ -897,9 +1059,6 @@
           </table>
         </div>
 
-        <div class="picture-placeholder stat-picture">
-          Picture placeholder
-        </div>
 
       </div>
 
@@ -1171,6 +1330,68 @@
     })();
   </script>
 
+
+  <!-- PICTURE CAROUSEL SCRIPT (first section) -->
+
+  <script>
+    (function () {
+
+      var track = document.getElementById('picTrack');
+      var prev = document.getElementById('picPrev');
+      var next = document.getElementById('picNext');
+
+      var total = track.children.length;
+      var index = total - 1;          // start at the last picture
+      var timer = null;
+
+      function update() {
+
+        track.style.transform =
+          'translateX(calc(' + (-index) + ' * (100% + 24px)))';
+
+        prev.disabled = index === 0;
+        next.disabled = index >= total - 1;
+
+      }
+
+      // Automatic backwards step every 3 seconds (wraps from the first to the last picture)
+      function autoStep() {
+        index = index > 0 ? index - 1 : total - 1;
+        update();
+      }
+
+      function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(autoStep, 3000);
+      }
+
+      // Manual navigation: also restarts the 3-second timer
+      prev.addEventListener('click', function () {
+        if (index > 0) {
+          index--;
+          update();
+          startTimer();
+        }
+      });
+
+      next.addEventListener('click', function () {
+        if (index < total - 1) {
+          index++;
+          update();
+          startTimer();
+        }
+      });
+
+      // Jump to the last picture without a slide animation on page load
+      track.style.transition = 'none';
+      update();
+      track.offsetWidth;              // force reflow
+      track.style.transition = '';
+
+      startTimer();
+
+    })();
+  </script>
 
   <!-- BACKGROUND ICON SCRIPT -->
 
