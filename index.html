@@ -97,9 +97,22 @@
 
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 24px;
       align-items: start;
+    }
+
+    .menu-grid .menu-box {
+      grid-column: span 2;
+    }
+
+    /* the bottom two boxes sit centered under the top three */
+    .menu-grid .menu-box:nth-child(4) {
+      grid-column: 2 / span 2;
+    }
+
+    .menu-grid .menu-box:nth-child(5) {
+      grid-column: 4 / span 2;
     }
 
     .menu-box {
@@ -281,6 +294,20 @@
     .header-title span {
       display: block;
       font-size: 0.9rem;
+    }
+
+    /* "#36", "Hivatalos weboldal" and the grey line use the same font as the section titles */
+
+    .header-title .hash,
+    .header-title span,
+    .subheader-text {
+      font-family: 'Roboto Condensed', Arial Narrow, sans-serif;
+      font-weight: 700;
+      letter-spacing: normal;
+    }
+
+    .header-title .hash {
+      font-style: normal;
     }
 
     .subheader-text {
@@ -902,7 +929,7 @@
       <div class="top-text">
 
         <div class="header-title">
-          <strong>Komma László #36</strong>
+          <strong>Komma László <em class="hash">#36</em></strong>
           <span>Hivatalos weboldal</span>
         </div>
 
